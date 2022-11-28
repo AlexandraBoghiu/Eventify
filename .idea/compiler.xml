@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="event-app-backend" />
+        <module name="EventAppBackend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="event-app-backend" target="17" />
+      <module name="EventAppBackend" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EventAppBackend" options="-parameters" />
       <module name="event-app-backend" options="-parameters" />
     </option>
   </component>
