@@ -1,0 +1,46 @@
+.register h1 {
+    color: #333;
+    font-size: 36px;
+    text-align: center;
+    margin: 3%;
+}
+.register p {
+    color: #666;
+    font-size: 18px;
+    text-align: center;
+    margin: 3%;
+}
+.form-div {
+    background: #e1e1e1;
+    border-radius: 12px;
+    width: 50%;
+    padding-bottom: 3%;
+    padding-top: 1%;
+    margin: 3% auto auto;
+}
+.form-row {
+    width: 30%;
+}
+.form-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-submit {
+    color: #FFFFFF;
+    background-color: #000000;
+    border-color: #000000;
+    border-radius: 12px;
+    width: 50%;
+    height: 40px;
+}
+.btn-submit:hover,
+.btn-submit:active{
+    color: #FFFFFF;
+    background-color: #83719C;
+    border-color: #83719C;
+    transition: 0.8s;
+}
+.error{
+    color: red;
+}

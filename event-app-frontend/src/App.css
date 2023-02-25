@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +34,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.typedText {
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(to right, red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Arial;
+}
+
+.text-div{
+  padding-top: 20%;
+  padding-bottom: 10%;
 }

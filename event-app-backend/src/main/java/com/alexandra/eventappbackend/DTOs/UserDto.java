@@ -18,16 +18,19 @@ import java.time.LocalDate;
 @Setter
 public class UserDto {
 
-    @NotBlank
+   // @NotBlank
     private String email;
 
-    @NotBlank
+    // @NotBlank
+    private String userName;
+
+    //@NotBlank
     private String password; //todo make secure
 
-    @NotBlank
+   // @NotBlank
     private String firstName;
 
-    @NotBlank
+  //  @NotBlank
     private String lastName;
 
 

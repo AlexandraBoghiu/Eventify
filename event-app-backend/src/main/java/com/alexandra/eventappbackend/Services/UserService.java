@@ -2,16 +2,17 @@ package com.alexandra.eventappbackend.Services;
 
 import com.alexandra.eventappbackend.DTOs.UserDto;
 import com.alexandra.eventappbackend.Entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 public interface UserService {
 
     void saveUser(UserDto userDto);
 
-    boolean checkIfUserExist(String email);
-
-    User findUserByEmail(String email);
-
+    boolean checkIfUserExistByEmail(String email);
+    boolean checkIfUserExistByUserName(String userName);
     boolean login(UserDto userDto);
+
+    List<User> getUsers();
 
 }
