@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -38,6 +40,10 @@ public class User {
 
     //@Column(nullable = false)
     private LocalDate dateOfBirth;
+
+    @Column
+    @ElementCollection
+    private Set<Integer> savedEvents;
 
     @Column(nullable = false)
  //   @Size(min = 0, max = 1) //0 - regular user; 1 - moderator/admin ?

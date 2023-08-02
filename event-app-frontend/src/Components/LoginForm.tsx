@@ -7,24 +7,14 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import {toast, ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import {MuiThemeProvider} from "@material-ui/core";
 import Container from "@mui/material/Container";
+import {toast, ToastContainer} from "react-toastify";
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#C9CFEC', // set your primary color
-        }
-    }
-});
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -40,31 +30,27 @@ const LoginForm = () => {
             body: JSON.stringify(userLogin)
 
         }).then(async response => {
-            const data = await response.text();
-            console.log(data);
-            if (data === 'true') {
+            const session = await response.text();
+            localStorage.setItem('session', session);
+            if (session != 'KO') {
+                toast.success("Welcome!", {
+                    position: toast.POSITION.BOTTOM_CENTER
+                });
                 navigate("/home")
                 localStorage.setItem('email', email)
+
             } else {
-                toast.error("Error Notification!", {
-                    position: toast.POSITION.TOP_CENTER,
-                    autoClose: 20000
-                })
+                toast.error("Wrong email or password!", {
+                    position: toast.POSITION.BOTTOM_CENTER
+                });
             }
-        })
-            .catch((error) => {
+        }).catch((error) => {
                 console.log(error)
             });
-        const notify = () => {
-            toast.error("Error Notification!", {
-                position: toast.POSITION.TOP_CENTER,
-                autoClose: 20000
-            })
+
         };
-    }
 
     return (
-        <MuiThemeProvider theme={theme}>
             <div className="background-image">
                 <div className="overlay">
                     <div className="register-form-background">
@@ -148,8 +134,19 @@ const LoginForm = () => {
                         </Container>
                     </div>
                 </div>
+                <ToastContainer
+                    position="bottom-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
             </div>
-        </MuiThemeProvider>
     );
 }
 

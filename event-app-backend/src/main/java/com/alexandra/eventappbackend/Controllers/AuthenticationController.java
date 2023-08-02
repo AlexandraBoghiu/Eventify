@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 
 @CrossOrigin(origins = "http://localhost:3000/")
@@ -26,13 +27,16 @@ public class AuthenticationController {
         return userService.getUsers();
     }
 
+
     @PostMapping("/register")
     public boolean registration(@RequestBody UserDto userDto){
         userService.saveUser(userDto);
         return true;
     }
     @PostMapping("/login")
-    public boolean login(@RequestBody UserDto userDto) {
+    public String login(@RequestBody UserDto userDto) {
         return userService.login(userDto);
     }
+
+
 }

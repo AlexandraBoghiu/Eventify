@@ -1,0 +1,28 @@
+
+.ambilight {
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    width: 450px;
+    height: 260px;
+    z-index: 2;
+    margin-left: -200px;
+}
+
+.light {
+    opacity: 0.8;
+    filter: blur(50px);
+    margin-left: -370px;
+    width: 1200px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}

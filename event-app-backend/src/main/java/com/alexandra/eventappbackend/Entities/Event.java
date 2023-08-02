@@ -6,7 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,13 +29,42 @@ public class Event {
     private String name;
 
     @Column
+    private LocalDate creationDate;
+
+    @Column
+    private LocalDate startDate;
+
+    @Column
+    private LocalDate endDate;
+
+    @Column
+    private LocalTime startTime;
+
+    @Column
+    private LocalTime endTime;
+
+    @Column
     private String description;
 
     @Column
-    private LocalDate date;
+    private String location;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "userId")
-    private User organizer;
+    @Column
+    private String locationDetails;
+
+//    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    @JoinColumn(name = "userId")
+    @Column
+    private String organizer;
+
+    @Column
+    private String category;
+
+    @Column
+    @ElementCollection
+    private Set<String> tags;
+
+    @Column
+    private String imagePath;
 
 }

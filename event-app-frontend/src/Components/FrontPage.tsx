@@ -15,8 +15,12 @@ const FrontPage = () => {
     return (
         <div className="background-image">
             <div className="overlay">
-                <p className="app-name">Event app</p>
-                <p className="description"> lorem ipsum ceva bla bla bla bla bla</p>
+                <p className="app-name"><img
+                    src="../logo.png"
+                    alt="Eventify"
+                    style={{width: '350px', height: '90px'}}
+                /></p>
+                <p className="description"> Innovative event app that helps you discover and plan exciting events tailored to your interests</p>
                 <div className="button-container">
                     <Button
                         type="submit"
